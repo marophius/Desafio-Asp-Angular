@@ -1,0 +1,154 @@
+<!-- <div class="p-col">
+<h3 class="first">Cadastrar Colaborador</h3>
+<div class="p-grid p-dir-col ui-fluid">
+    <div class="p-col-6 p-md-4">
+        <div class="ui-inputgroup">
+            <label for="nome" class="p-col">Nome Completo</label>
+            <span class="ui-inputgroup-addon"><i class="pi pi-user"></i></span>
+            <input name="nome" type="text" id="inputNome" [(ngModel)]="colaborador.nome" type="text" pInputText placeholder="ex.: Marcio Lombardi"[ngClass]="{
+              'is-invalid': nome.invalid && (nome.dirty || nome.touched),
+               'is-valid': nome.valid && (nome.dirty || nome.touched)
+             }" #nome="ngModel" [ngModelOptions]="{standalone: true}">         
+        </div>
+    </div>
+    
+    <div class="p-col-6 p-md-6">
+        <div class="ui-inputgroup">
+            <label for="genero">Genero</label>
+            <input name="genero" id="inputgenero" [(ngModel)]="colaborador.genero" type="text" pInputText placeholder="Price"
+            [ngClass]="{
+              'is-invalid': genero.invalid && (genero.dirty || genero.touched),
+               'is-valid': genero.valid && (genero.dirty || genero.touched)
+             }" #genero="ngModel" [ngModelOptions]="{standalone: true}">       
+        </div>
+    </div>
+            
+    <div class="p-col-12 p-md-6">
+        <div class="ui-inputgroup">
+            <label for="telefone"></label>
+            <input name="telefone" id="inputTelefone" type="text" pInputText placeholder="ex.:(xx)xxxx-xxxx"
+            placeholder="Price" [(ngModel)]="colaborador.telefone"
+            [ngClass]="{
+              'is-invalid': genero.invalid && (genero.dirty || genero.touched),
+               'is-valid': genero.valid && (genero.dirty || genero.touched)
+             }" #telefone="ngModel" [ngModelOptions]="{standalone: true}">      
+        </div>
+    </div>
+
+    <div class="p-col-12 p-md-4">
+      <label for="inputData">Data de Nascimento</label>
+      <p-calendar name="data" [(ngModel)]="colaborador.dataNascimento" [showIcon]="true" dateFormat="dd/mm/yy" id="inputData" ></p-calendar>
+  </div>
+</div>
+</div> -->
+
+<div class="col-md-4 order-md-1" class="form" style="padding: 20px;">
+  <h4 class="mb-3">Cadastro de Colaboradores</h4>
+  <form class="needs-validation" novalidate="" #form="ngForm">
+    <div class="row">
+      <div class="col-md-6 mb-3">
+        <label for="inputNome">Nome</label>
+        <input name="nome" type="text" class="form-control" [(ngModel)]="colaborador.nome" id="inputNome" placeholder="ex.: Marcio Oliveira" [ngClass]="{
+          'is-invalid': nome.invalid && (nome.dirty || nome.touched),
+           'is-valid': nome.valid && (nome.dirty || nome.touched)
+         }" #nome="ngModel" [ngModelOptions]="{standalone: true}"> 
+        <div class="invalid-feedback">
+          O campo nome é obrigatório.
+        </div>
+      </div>
+      <div class="col-md-6 mb-3">
+        <label for="genero">Gênero</label>
+        <input name="genero" type="text" class="form-control" [(ngModel)]="colaborador.genero" id="genero"
+          placeholder="ex.: Masculino/Feminino/Outros"
+          [ngClass]="{
+            'is-invalid': genero.invalid && (genero.dirty || genero.touched),
+             'is-valid': genero.valid && (genero.dirty || genero.touched)
+           }" #genero="ngModel" [ngModelOptions]="{standalone: true}">
+        <div class="invalid-feedback">
+          Insira o gênero que se identificar melhor.
+        </div>
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label for="telefone">Telefone</label>
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text">
+            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-telephone-fill" fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M2.267.98a1.636 1.636 0 0 1 2.448.152l1.681 2.162c.309.396.418.913.296 1.4l-.513 2.053a.636.636 0 0 0 .167.604L8.65 9.654a.636.636 0 0 0 .604.167l2.052-.513a1.636 1.636 0 0 1 1.401.296l2.162 1.681c.777.604.849 1.753.153 2.448l-.97.97c-.693.693-1.73.998-2.697.658a17.47 17.47 0 0 1-6.571-4.144A17.47 17.47 0 0 1 .639 4.646c-.34-.967-.035-2.004.658-2.698l.97-.969z" />
+            </svg>
+          </span>
+        </div>
+        <input name="telefone" type="text" [(ngModel)]="colaborador.telefone" class="form-control" id="inputTelefone"
+          placeholder="ex.: (xx)xxxx-xxxxx" required="" [ngClass]="{
+            'is-invalid': telefone.invalid && (telefone.dirty || telefone.touched),
+             'is-valid': telefone.valid && (telefone.dirty || telefone.touched)
+           }" #telefone="ngModel" [ngModelOptions]="{standalone: true}">
+        <div class="invalid-feedback" style="width: 100%;">
+          Telefone é um campo obrigatório.
+        </div>
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label for="username">Data de Nascimento</label>
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text">
+            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-calendar-fill" fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M3.5 0a.5.5 0 0 1 .5.5V1a.5.5 0 0 1-1 0V.5a.5.5 0 0 1 .5-.5zm9 0a.5.5 0 0 1 .5.5V1a.5.5 0 0 1-1 0V.5a.5.5 0 0 1 .5-.5z" />
+              <path d="M2 1a2 2 0 0 0-2 2v1h16V3a2 2 0 0 0-2-2H2zm14 4H0v9a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V5z" />
+            </svg>
+          </span>
+        </div>
+        <input name="dataNascimento" type="text" [(ngModel)]="colaborador.dataNascimento" class="form-control" id="inputData"
+          placeholder="ex.: 29/05/1997" required=""
+          [ngClass]="{
+            'is-invalid': dataNascimento.invalid && (dataNascimento.dirty || dataNascimento.touched),
+             'is-valid': dataNascimento.valid && (dataNascimento.dirty || dataNascimento.touched)
+           }" #dataNascimento="ngModel" [ngModelOptions]="{standalone: true}"
+          >
+        <div class="invalid-feedback" style="width: 100%;">
+          Insira a data de nascimento do colaborador
+        </div>
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label for="address">Endereço</label>
+      <input name="endereco" type="text" [(ngModel)]="colaborador.endereco" class="form-control" id="endereco"
+        placeholder="ex.: Rua Santa Maria" required=""
+        [ngClass]="{
+          'is-invalid': endereco.invalid && (endereco.dirty || endereco.touched),
+           'is-valid': endereco.valid && (endereco.dirty || endereco.touched)
+         }" #endereco="ngModel" [ngModelOptions]="{standalone: true}"
+        >
+      <div class="invalid-feedback">
+        Por favor insira um endereço válido.
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label for="address">Código Equipe</label>
+      <input name="equipeId" type="text" [(ngModel)]="colaborador.equipeId" class="form-control" id="endereco" placeholder="ex.: 2"
+        required=""
+        [ngClass]="{
+          'is-invalid': equipeId.invalid && (equipeId.dirty || equipeId.touched),
+           'is-valid': equipeId.valid && (equipeId.dirty || equipeId.touched)
+         }" #equipeId="ngModel" [ngModelOptions]="{standalone: true}"
+        >
+      <div class="invalid-feedback">
+        Por favor insira um código de equipe.
+      </div>
+    </div>
+    <div class="mb-3 ">
+      <button class="btn btn-primary col-md-5 mr-4" (click)="cadastrar()">Cadastrar</button>
+      <button class="btn btn-secondary col-md-5" (click)="limpar()">Limpar</button>
+    </div>
+  </form>
+</div>

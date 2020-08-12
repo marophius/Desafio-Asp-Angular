@@ -1,0 +1,72 @@
+<div class="form" style="padding-top: 20px;">
+  <h4 class="mb-3">Cadastro de Equipes</h4>
+  <div class="mb-3">
+    <label for="nomeEquipe">Nome da Equipe</label>
+    <div class="input-group">
+      <div class="input-group-prepend">
+
+      </div>
+      <input name="nomeEquipe" type="text" [(ngModel)]="equipe.nomeEquipe" class="form-control" id="nomeEquipe"
+        placeholder="ex.: Alpha" required=""
+        [ngClass]="{
+          'is-invalid': nomeEquipe.invalid && (nomeEquipe.dirty || nomeEquipe.touched),
+           'is-valid': nomeEquipe.valid && (nomeEquipe.dirty || nomeEquipe.touched)
+         }" #nomeEquipe="ngModel" [ngModelOptions]="{standalone: true}">
+      <div class="invalid-feedback" style="width: 100%;">
+        Telefone é um campo obrigatório.
+      </div>
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <label for="nomeGestor">Nome do Gestor</label>
+    <div class="input-group">
+      <div class="input-group-prepend">
+
+      </div>
+      <input name="nomeGestor" type="text" [(ngModel)]="equipe.nomeGestor" class="form-control" id="nomeGestor"
+        placeholder="ex.: Luciano" required=""
+        [ngClass]="{
+          'is-invalid': nomeGestor.invalid && (nomeGestor.dirty || nomeGestor.touched),
+           'is-valid': nomeGestor.valid && (nomeGestor.dirty || nomeGestor.touched)
+         }" #nomeGestor="ngModel" [ngModelOptions]="{standalone: true}">
+      <div class="invalid-feedback" style="width: 100%;">
+        Telefone é um campo obrigatório.
+      </div>
+
+      <div class="mb-3">
+        <button class="btn btn-primary" (click)="cadastrar()">Cadastrar</button>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+
+
+<!-- <div class="col-md-4 order-md-1" class="form">
+    <h4 class="mb-3">Cadastro de Colaboradores</h4>
+    <form class="needs-validation" novalidate="">
+
+      <div class="mb-3">
+        <label for="nomeEquipe">Nome da Equipe</label>
+        <input type="text" class="form-control" id="nomeEquipe" placeholder="ex.: Alpha" required="">
+        <div class="invalid-feedback">
+          O nome da equipe é obrigatório.
+        </div>
+      </div>
+
+        <div class="mb-3">
+          <label for="nomeGestor">Nome do Gestor</label>
+          <input type="text" class="form-control" id="nomeGestor" placeholder="ex.: Luciano Alberto" required="">
+          <div class="invalid-feedback">
+            O nome do gestor é obrigatório.
+          </div>
+        </div>
+      <div class="mb-3 ">
+        <button class="btn btn-primary col-md-5 mr-4">Cadastrar</button>
+        <button class="btn btn-secondary col-md-5">Limpar</button>
+      </div>
+    </form>
+  </div> -->
